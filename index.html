@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker App</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>🎯 Job Tracker Pro</h1>
+            <p>Keep track of your job applications and land your dream job!</p>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="stats-section" id="statsSection">
+            <div class="stat-card">
+                <div class="stat-number" id="totalJobs">0</div>
+                <div class="stat-label">Total Applications</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="interviewJobs">0</div>
+                <div class="stat-label">Interviews</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="offerJobs">0</div>
+                <div class="stat-label">Offers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="rejectedJobs">0</div>
+                <div class="stat-label">Rejections</div>
+            </div>
+        </div>
+
+        <!-- Add Job Form -->
+        <div class="form-section">
+            <h2 class="section-title">➕ Add New Job Application</h2>
+            <form id="jobForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" required placeholder="e.g., Google, Microsoft">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position">Job Position *</label>
+                        <input type="text" id="position" required placeholder="e.g., Software Developer">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" placeholder="e.g., Bangalore, Remote">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="salary">Expected Salary</label>
+                        <input type="text" id="salary" placeholder="e.g., ₹8-12 LPA">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="status">Application Status *</label>
+                        <select id="status" required>
+                            <option value="applied">Applied</option>
+                            <option value="interview">Interview Scheduled</option>
+                            <option value="offer">Offer Received</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appliedDate">Date Applied</label>
+                        <input type="date" id="appliedDate">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" placeholder="Add any additional notes about this application..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Add Job Application</button>
+            </form>
+        </div>
+
+        <!-- Job List Section -->
+        <div class="jobs-section">
+            <h2 class="section-title">📋 Your Job Applications</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All Jobs</button>
+                <button class="filter-btn" data-filter="applied">Applied</button>
+                <button class="filter-btn" data-filter="interview">Interview</button>
+                <button class="filter-btn" data-filter="offer">Offers</button>
+                <button class="filter-btn" data-filter="rejected">Rejected</button>
+            </div>
+            
+            <!-- Jobs Grid -->
+            <div class="jobs-grid" id="jobsGrid">
+                <div class="empty-state">
+                    <div style="font-size: 4em;">📝</div>
+                    <h3>No job applications yet!</h3>
+                    <p>Add your first job application above to get started.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
